@@ -1,0 +1,223 @@
+import SwiftUI
+
+struct ContentView: View {
+    @EnvironmentObject var viewModel: FinanceViewModel
+    @State private var selectedTab = 0
+    @State private var showingResetConfirmation = false
+    @State private var navigateToGastosDiarios = false
+    @State private var navigateToPropinas = false
+    @State private var navigateToSuscripciones = false
+    @State private var showTipsView = false
+    @State private var showingAddIncomeTransaction = false
+    @State private var showingAddExpenseTransaction = false
+    
+    // Función para navegar directamente a la vista de propinas
+    func navigateToTipsView() {
+        // Primero cambiamos a la pestaña "Más"
+        selectedTab = 3
+        // Luego activamos la navegación a propinas
+        navigateToPropinas = true
+    }
+    
+    // Función para navegar directamente a suscripciones
+    func navigateToSubscriptionsView() {
+        // Primero cambiamos a la pestaña "Más"
+        selectedTab = 3
+        // Luego activamos la navegación a suscripciones
+        navigateToSuscripciones = true
+    }
+    
+    // Función para navegar directamente a gastos diarios
+    func navigateToGastosDiariosView() {
+        // Primero cambiamos a la pestaña "Más"
+        selectedTab = 3
+        // Luego activamos la navegación a gastos diarios
+        navigateToGastosDiarios = true
+    }
+    
+    private func formatCurrentMonth() -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "es_ES")
+        formatter.dateFormat = "MMMM"
+        
+        // Obtener la fecha actual
+        let currentDate = Date()
+        
+        // Si se debe mostrar el mes siguiente (después de un reset)
+        if viewModel.showNextMonth {
+            let calendar = Calendar.current
+            if let nextMonth = calendar.date(byAdding: .month, value: 1, to: currentDate) {
+                return formatter.string(from: nextMonth).uppercased()
+            }
+        }
+        
+        return formatter.string(from: currentDate).uppercased()
+    }
+    
+    private func formatCurrentYear() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy"
+        
+        // Obtener la fecha actual
+        let currentDate = Date()
+        
+        // Si se debe mostrar el mes siguiente y es diciembre
+        if viewModel.showNextMonth {
+            let calendar = Calendar.current
+            let currentMonth = calendar.component(.month, from: currentDate)
+            
+            if currentMonth == 12 {
+                if let nextYear = calendar.date(byAdding: .year, value: 1, to: currentDate) {
+                    return formatter.string(from: nextYear)
+                }
+            }
+        }
+        
+        return formatter.string(from: currentDate)
+    }
+    
+    private func sincronizarTotales() {
+        print("ContentView: Iniciando sincronización de totales")
+        if let tipTransaction = viewModel.findTipsTransaction() {
+            print("ContentView: Transacción de propinas encontrada")
+            let total = viewModel.getCurrentMonthTipsTotal(tipTransaction: tipTransaction)
+            print("ContentView: Total calculado: \(total)€")
+            
+            // Actualizar la transacción con el nuevo total
+            var updatedTransaction = tipTransaction
+            updatedTransaction.amount = total
+            
+            if let index = viewModel.incomes.firstIndex(where: { $0.id == tipTransaction.id }) {
+                viewModel.incomes[index] = updatedTransaction
+                print("ContentView: Transacción actualizada correctamente")
+            } else {
+                print("ContentView: No se encontró el índice de la transacción")
+            }
+        } else {
+            print("ContentView: No se encontró transacción de propinas")
+        }
+    }
+    
+    var body: some View {
+        TabView(selection: $selectedTab) {
+            NavigationView {
+                TransactionListView(
+                    transactions: $viewModel.incomeTransactions,
+                    title: "Ingresos",
+                    pendingTotal: viewModel.pendingIncome,
+                    completedTotal: viewModel.completedIncome,
+                    total: viewModel.totalIncome,
+                    type: .income,
+                    selectedTab: $selectedTab,
+                    navigateToPropinas: $navigateToPropinas
+                )
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        VStack(spacing: 2) {
+                            Text("Ingresos")
+                                .font(.title2)
+                                .bold()
+                            Text("\(formatCurrentMonth()) \(formatCurrentYear())")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        .frame(maxWidth: .infinity)
+                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: { showingResetConfirmation = true }) {
+                            Image(systemName: "arrow.counterclockwise")
+                                .foregroundColor(.blue)
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: { showingAddIncomeTransaction = true }) {
+                            Image(systemName: "plus")
+                        }
+                    }
+                }
+                .sheet(isPresented: $showingAddIncomeTransaction) {
+                    AddTransactionView(type: .income)
+                }
+            }
+            .tabItem {
+                Label("Ingresos", systemImage: "arrow.down.circle.fill")
+            }
+            .tag(0)
+            
+            NavigationView {
+                TransactionListView(
+                    transactions: $viewModel.expenseTransactions,
+                    title: "Gastos",
+                    pendingTotal: viewModel.pendingExpenses,
+                    completedTotal: viewModel.completedExpenses,
+                    total: viewModel.totalExpenses,
+                    type: .expense,
+                    selectedTab: $selectedTab,
+                    navigateToGastosDiarios: $navigateToGastosDiarios,
+                    navigateToSuscripciones: $navigateToSuscripciones
+                )
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        VStack(spacing: 2) {
+                            Text("Gastos")
+                                .font(.title2)
+                                .bold()
+                            Text("\(formatCurrentMonth()) \(formatCurrentYear())")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        .frame(maxWidth: .infinity)
+                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: { showingResetConfirmation = true }) {
+                            Image(systemName: "arrow.counterclockwise")
+                                .foregroundColor(.blue)
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: { showingAddExpenseTransaction = true }) {
+                            Image(systemName: "plus")
+                        }
+                    }
+                }
+                .sheet(isPresented: $showingAddExpenseTransaction) {
+                    AddTransactionView(type: .expense)
+                }
+            }
+            .tabItem {
+                Label("Gastos", systemImage: "arrow.up.circle.fill")
+            }
+            .tag(1)
+            
+            NavigationView {
+                BenefitsView()
+            }
+            .tabItem {
+                Label("Beneficios", systemImage: "chart.pie.fill")
+            }
+            .tag(2)
+            
+            NavigationView {
+                MoreView(selectedTab: $selectedTab, navigateToGastosDiarios: $navigateToGastosDiarios, navigateToPropinas: $navigateToPropinas, navigateToSuscripciones: $navigateToSuscripciones)
+            }
+            .tabItem {
+                Label("Más", systemImage: "ellipsis.circle.fill")
+            }
+            .tag(3)
+        }
+        .alert("Atención", isPresented: $showingResetConfirmation) {
+            Button("Cancelar", role: .cancel) { }
+            Button("Restablecer", role: .destructive) {
+                viewModel.resetCompletedTransactions()
+            }
+        } message: {
+            Text("Se restablecerán todos los conceptos a su estado original. ¿Está seguro de querer realizar esta operación?")
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+} 

@@ -1,0 +1,3 @@
+// Configuración para evitar problemas de Swift tasks not blocking
+SWIFT_ENABLE_BATCH_MODE = NO
+OTHER_SWIFT_FLAGS = -Xfrontend -enable-cross-module-incremental-build -Xfrontend -disable-cross-module-incremental-build -Xfrontend -enable-batch-mode

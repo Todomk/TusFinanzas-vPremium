@@ -1,0 +1,886 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project TusFinanzas.xcodeproj -scheme TusFinanzas clean build -destination "platform=iOS Simulator,name=iPhone 16"
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:iOS Simulator, arch:arm64, id:3CA06C4A-BB4E-476B-86B3-3CF3DD47AE11, OS:18.4, name:iPhone 16 }
+{ platform:iOS Simulator, arch:x86_64, id:3CA06C4A-BB4E-476B-86B3-3CF3DD47AE11, OS:18.4, name:iPhone 16 }
+ComputePackagePrebuildTargetDependencyGraph
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+** CLEAN SUCCEEDED **
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:iOS Simulator, arch:arm64, id:3CA06C4A-BB4E-476B-86B3-3CF3DD47AE11, OS:18.4, name:iPhone 16 }
+{ platform:iOS Simulator, arch:x86_64, id:3CA06C4A-BB4E-476B-86B3-3CF3DD47AE11, OS:18.4, name:iPhone 16 }
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (2 targets)
+    Target 'TusFinanzas' in project 'TusFinanzas'
+        ➜ Explicit dependency on target 'TusFinanzaswidgetExtension' in project 'TusFinanzas'
+    Target 'TusFinanzaswidgetExtension' in project 'TusFinanzas' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.4.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Assets.xcassets /Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Assets 2.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 498fa6e112de9094dc3861033201a639
+Build description path: /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/XCBuildData/498fa6e112de9094dc3861033201a639.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.4.sdk /Users/rogalan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.4-22E235-71825a6d136aa4733edcbe86ece5525b.sdkstatcache
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.4.sdk -o /Users/rogalan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.4-22E235-71825a6d136aa4733edcbe86ece5525b.sdkstatcache
+
+CreateBuildDirectory /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas.xcodeproj
+    builtin-create-build-directory /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex
+
+CreateBuildDirectory /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas.xcodeproj
+    builtin-create-build-directory /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products
+
+CreateBuildDirectory /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas.xcodeproj
+    builtin-create-build-directory /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas-1ed5572164b7acb77f383bbfff6108c0-VFS-iphonesimulator/all-product-headers.yaml
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas.xcodeproj
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas-1ed5572164b7acb77f383bbfff6108c0-VFS-iphonesimulator/all-product-headers.yaml
+
+CreateBuildDirectory /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas.xcodeproj
+    builtin-create-build-directory /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.hmap (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.hmap
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-project-headers.hmap (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-project-headers.hmap
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-generated-files.hmap (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-generated-files.hmap
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-own-target-headers.hmap (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-all-non-framework-target-headers.hmap (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.DependencyMetadataFileList (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-DebugEntryPoint-normal-arm64.txt (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-DebugEntryPoint-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.DependencyStaticMetadataFileList (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-all-target-headers.hmap (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-DebugDylibPath-normal-arm64.txt (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-DebugDylibPath-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-DebugDylibInstallName-normal-arm64.txt (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-DebugDylibInstallName-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.SwiftFileList (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.SwiftFileList
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension_const_extract_protocols.json (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.SwiftConstValuesFileList (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.LinkFileList (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.LinkFileList
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension-OutputFileMap.json (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.hmap (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.hmap
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/DerivedSources/Entitlements-Simulated.plist (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/DerivedSources/Entitlements-Simulated.plist
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.DependencyStaticMetadataFileList (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.DependencyMetadataFileList (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-project-headers.hmap (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-project-headers.hmap
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-own-target-headers.hmap (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-generated-files.hmap (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-generated-files.hmap
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-all-target-headers.hmap (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-all-non-framework-target-headers.hmap (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-DebugDylibPath-normal-arm64.txt (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-DebugDylibPath-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-DebugDylibInstallName-normal-arm64.txt (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-DebugDylibInstallName-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas_const_extract_protocols.json (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas.SwiftFileList (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas.SwiftFileList
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas.SwiftConstValuesFileList (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas.LinkFileList (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas.LinkFileList
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas-OutputFileMap.json (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources/Entitlements-Simulated.plist (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    write-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources/Entitlements-Simulated.plist
+
+MkDir /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.appex (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    /bin/mkdir -p /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.appex
+
+MkDir /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzas.app/PlugIns (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    /bin/mkdir -p /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzas.app/PlugIns
+
+MkDir /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzas.app (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    /bin/mkdir -p /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzas.app
+
+ProcessProductPackaging /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidgetExtension.entitlements /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.appex.xcent (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+    Entitlements:
+    
+    {
+}
+    
+    builtin-productPackagingUtility /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidgetExtension.entitlements -entitlements -format xml -o /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.appex.xcent
+
+ProcessProductPackaging /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidgetExtension.entitlements /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.appex-Simulated.xcent (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "FVTU44M4M2.com.carretas.TusFinanzas.TusFinanzaswidget";
+    "com.apple.security.application-groups" =     (
+        "group.com.rogalan.TusFinanzas"
+    );
+}
+    
+    builtin-productPackagingUtility /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidgetExtension.entitlements -entitlements -format xml -o /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.appex-Simulated.xcent
+
+ProcessProductPackagingDER /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.appex.xcent /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.appex.xcent.der (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    /usr/bin/derq query -f xml -i /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.appex.xcent -o /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.appex.xcent.der --raw
+
+ProcessProductPackagingDER /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.appex-Simulated.xcent /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.appex-Simulated.xcent.der (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    /usr/bin/derq query -f xml -i /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.appex-Simulated.xcent -o /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.appex-Simulated.xcent.der --raw
+
+Ld /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.appex/__preview.dylib normal (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios18.4-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.4.sdk -O0 -L/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator -F/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator -install_name @rpath/TusFinanzaswidgetExtension.debug.dylib -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension_dependency_info.dat -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.appex-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension.appex-Simulated.xcent.der -Xlinker -no_adhoc_codesign -o /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.appex/__preview.dylib
+
+CpResource /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.appex/README.md /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/README.md (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/README.md /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.appex
+
+ProcessInfoPlistFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.appex/Info.plist /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/Info.plist (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    builtin-infoPlistUtility /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/Info.plist -producttype com.apple.product-type.app-extension -expandbuildsettings -format binary -platform iphonesimulator -o /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.appex/Info.plist
+
+SwiftDriver TusFinanzaswidgetExtension normal arm64 com.apple.xcode.tools.swift.compiler (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name TusFinanzaswidgetExtension -Onone -enforce-exclusivity\=checked @/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.4.sdk -target arm64-apple-ios18.4-simulator -g -module-cache-path /Users/rogalan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -application-extension -enable-testing -index-store-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Index.noindex/DataStore -swift-version 5 -I /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator -F /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64 -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.4-22E235-71825a6d136aa4733edcbe86ece5525b.sdkstatcache -output-file-map /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/rogalan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension_const_extract_protocols.json -Xcc -iquote -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-generated-files.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-own-target-headers.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-all-target-headers.hmap -Xcc -iquote -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-project-headers.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/DerivedSources-normal/arm64 -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/DerivedSources/arm64 -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension-Swift.h -working-directory /Users/rogalan/Desktop/Proyectos\ Xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal arm64 Compiling\ Transaction.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/Shared/Transaction.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/Shared/Transaction.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzaswidget/Shared/Transaction.swift:225:23: warning: variable 'baseDate' was never mutated; consider changing to 'let' constant
+            guard var baseDate = calendar.date(from: components) else {
+                  ~~~ ^
+                  let
+
+SwiftCompile normal arm64 Compiling\ AppIntent.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/AppIntent.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/AppIntent.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 Compiling\ AlternativeQuickEntryIntent.swift,\ StorageManager.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/AlternativeQuickEntryIntent.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/Shared/StorageManager.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/AlternativeQuickEntryIntent.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/Shared/StorageManager.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 Compiling\ TipsWidget.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/TipsWidget.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/TipsWidget.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 Compiling\ TusFinanzaswidget.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/TusFinanzaswidget.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/TusFinanzaswidget.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 Compiling\ TusFinanzaswidgetBundle.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/TusFinanzaswidgetBundle.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/TusFinanzaswidgetBundle.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 Compiling\ QuickEntryIntent.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/QuickEntryIntent.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/QuickEntryIntent.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzaswidget/QuickEntryIntent.swift:18:1: warning: conformance to 'Sendable' must occur in the same source file as enum 'GPCategory'; use '@unchecked Sendable' for retroactive conformance; this is an error in the Swift 6 language mode
+extension GPCategory: AppEnum {
+^
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ TusFinanzaswidgetExtension (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+EmitSwiftModule normal arm64 (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzaswidget/QuickEntryIntent.swift:18:1: warning: conformance to 'Sendable' must occur in the same source file as enum 'GPCategory'; use '@unchecked Sendable' for retroactive conformance; this is an error in the Swift 6 language mode
+extension GPCategory: AppEnum {
+^
+
+SwiftCompile normal arm64 Compiling\ WidgetDataProvider.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/Shared/WidgetDataProvider.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/Shared/WidgetDataProvider.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 Compiling\ QuickEntryWidget.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/QuickEntryWidget.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/QuickEntryWidget.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 Compiling\ TusFinanzasWidgetMain.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/TusFinanzasWidgetMain.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/TusFinanzasWidgetMain.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling TusFinanzaswidgetBundle.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftDriverJobDiscovery normal arm64 Compiling TusFinanzaswidget.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftDriverJobDiscovery normal arm64 Compiling AppIntent.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftDriverJobDiscovery normal arm64 Compiling QuickEntryIntent.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftDriverJobDiscovery normal arm64 Compiling AlternativeQuickEntryIntent.swift, StorageManager.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for TusFinanzaswidgetExtension (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftDriver\ Compilation\ Requirements TusFinanzaswidgetExtension normal arm64 com.apple.xcode.tools.swift.compiler (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name TusFinanzaswidgetExtension -Onone -enforce-exclusivity\=checked @/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.4.sdk -target arm64-apple-ios18.4-simulator -g -module-cache-path /Users/rogalan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -application-extension -enable-testing -index-store-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Index.noindex/DataStore -swift-version 5 -I /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator -F /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64 -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.4-22E235-71825a6d136aa4733edcbe86ece5525b.sdkstatcache -output-file-map /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/rogalan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension_const_extract_protocols.json -Xcc -iquote -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-generated-files.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-own-target-headers.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-all-target-headers.hmap -Xcc -iquote -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-project-headers.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/DerivedSources-normal/arm64 -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/DerivedSources/arm64 -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension-Swift.h -working-directory /Users/rogalan/Desktop/Proyectos\ Xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftMergeGeneratedHeaders /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/DerivedSources/TusFinanzaswidgetExtension-Swift.h /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension-Swift.h (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    builtin-swiftHeaderTool -arch arm64 /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension-Swift.h -o /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/DerivedSources/TusFinanzaswidgetExtension-Swift.h
+
+Copy /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.swiftmodule/arm64-apple-ios-simulator.swiftdoc /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.swiftdoc (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.swiftdoc /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.abi.json (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.abi.json /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.swiftmodule (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.swiftmodule /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.swiftsourceinfo (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.swiftsourceinfo /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling WidgetDataProvider.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+ProcessProductPackaging /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzas.entitlements /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.app.xcent (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+    Entitlements:
+    
+    {
+}
+    
+    builtin-productPackagingUtility /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzas.entitlements -entitlements -format xml -o /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.app.xcent
+
+ProcessProductPackaging /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzas.entitlements /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.app-Simulated.xcent (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "FVTU44M4M2.com.carretas.TusFinanzas";
+    "com.apple.security.application-groups" =     (
+        "group.com.rogalan.TusFinanzas"
+    );
+}
+    
+    builtin-productPackagingUtility /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzas.entitlements -entitlements -format xml -o /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.app-Simulated.xcent
+
+ProcessProductPackagingDER /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.app-Simulated.xcent /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.app-Simulated.xcent.der (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    /usr/bin/derq query -f xml -i /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.app-Simulated.xcent -o /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.app-Simulated.xcent.der --raw
+
+ProcessProductPackagingDER /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.app.xcent /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.app.xcent.der (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    /usr/bin/derq query -f xml -i /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.app.xcent -o /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas.app.xcent.der --raw
+
+SwiftDriverJobDiscovery normal arm64 Compiling TusFinanzasWidgetMain.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+GenerateAssetSymbols /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Assets.xcassets /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Assets\ 2.xcassets (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Assets.xcassets /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Assets\ 2.xcassets --compile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzas.app --output-format human-readable-text --notices --warnings --export-dependency-info /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/assetcatalog_dependencies --output-partial-info-plist /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/assetcatalog_generated_info.plist --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 18.4 --platform iphonesimulator --bundle-identifier com.carretas.TusFinanzas --generate-swift-asset-symbols /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/* com.apple.actool.compilation-results */
+/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources/GeneratedAssetSymbols.h
+/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources/GeneratedAssetSymbols.swift
+
+
+MkDir /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/assetcatalog_output/unthinned (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    /bin/mkdir -p /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/assetcatalog_output/unthinned
+
+MkDir /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/assetcatalog_output/thinned (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    /bin/mkdir -p /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/assetcatalog_output/thinned
+
+CompileAssetCatalogVariant thinned /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzas.app /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Assets.xcassets /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Assets\ 2.xcassets (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Assets.xcassets /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Assets\ 2.xcassets --compile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --filter-for-thinning-device-configuration iPhone17,3 --filter-for-device-os-version 18.4 --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 18.4 --platform iphonesimulator
+
+SwiftDriver TusFinanzas normal arm64 com.apple.xcode.tools.swift.compiler (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name TusFinanzas -Onone -enforce-exclusivity\=checked @/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.4.sdk -target arm64-apple-ios18.4-simulator -g -module-cache-path /Users/rogalan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Index.noindex/DataStore -swift-version 5 -I /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator -F /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64 -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.4-22E235-71825a6d136aa4733edcbe86ece5525b.sdkstatcache -output-file-map /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/rogalan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas_const_extract_protocols.json -Xcc -iquote -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-generated-files.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-own-target-headers.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-all-target-headers.hmap -Xcc -iquote -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-project-headers.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources-normal/arm64 -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources/arm64 -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas-Swift.h -working-directory /Users/rogalan/Desktop/Proyectos\ Xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal arm64 Compiling\ AddGPTransactionView.swift,\ URLSchemeConfig.swift,\ WidgetDataProvider.swift,\ NavigationIntent.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/AddGPTransactionView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/URLSchemeConfig.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Shared/WidgetDataProvider.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/NavigationIntent.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/AddGPTransactionView.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/URLSchemeConfig.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Shared/WidgetDataProvider.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/NavigationIntent.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 Compiling\ Transaction.swift,\ TransactionViews.swift,\ ConfiguracionView.swift,\ SettingsView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Shared/Transaction.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/TransactionViews.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/ConfiguracionView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/SettingsView.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Shared/Transaction.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/TransactionViews.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/ConfiguracionView.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/SettingsView.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 Compiling\ MoreView.swift,\ EditTransactionView.swift,\ ContentView.swift,\ QuickGPEntryView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/MoreView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/EditTransactionView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/ContentView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/QuickGPEntryView.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/MoreView.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/EditTransactionView.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/ContentView.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/QuickGPEntryView.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 Compiling\ TusFinanzasWidget.swift,\ EditGPTransactionView.swift,\ TusFinanzasApp.swift,\ FinanceViewModel.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzasWidget_OLD/TusFinanzasWidget.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/EditGPTransactionView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzasApp.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/ViewModels/FinanceViewModel.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzasWidget_OLD/TusFinanzasWidget.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/EditGPTransactionView.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzasApp.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/ViewModels/FinanceViewModel.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 Compiling\ StorageManager.swift,\ TusFinanzaswidget.swift,\ iOS_Platform.swift,\ GPTransactionListView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Shared/StorageManager.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzaswidget/TusFinanzaswidget.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/iOS_Platform.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/GPTransactionListView.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Shared/StorageManager.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzaswidget/TusFinanzaswidget.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/iOS_Platform.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/GPTransactionListView.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ TusFinanzas (in target 'TusFinanzas' from project 'TusFinanzas')
+Failed frontend command:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -emit-module -experimental-skip-non-inlinable-function-bodies-without-types /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Shared/StorageManager.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzaswidget/TusFinanzaswidget.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/iOS_Platform.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/GPTransactionListView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/AddGPTransactionView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/URLSchemeConfig.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Shared/WidgetDataProvider.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/NavigationIntent.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/MoreView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/EditTransactionView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/ContentView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/QuickGPEntryView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Shared/Transaction.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/TransactionViews.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/ConfiguracionView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/SettingsView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzasWidget_OLD/TusFinanzasWidget.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/EditGPTransactionView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzasApp.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/ViewModels/FinanceViewModel.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/TipsView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzaswidget/TusFinanzasWidgetMain.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/DeepLinkHandler.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Shared/StringExtensions.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/TransactionRow.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/CategoriesView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzasApp_simple.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzaswidget/QuickEntryWidget.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/BenefitsView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzasWidget_OLD/TipsWidget.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/TransactionListView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzaswidget/TusFinanzaswidgetBundle.swift /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources/GeneratedAssetSymbols.swift -target arm64-apple-ios18.4-simulator -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.4.sdk -I /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator -F /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator -no-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=5 -module-cache-path /Users/rogalan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -swift-version 5 -enforce-exclusivity\=checked -Onone -D DEBUG -serialize-debugging-options -const-gather-protocols-file /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/rogalan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/rogalan/Desktop/Proyectos\ Xcode -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift -enable-anonymous-context-mangled-names -file-compilation-dir /Users/rogalan/Desktop/Proyectos\ Xcode -Xcc -ivfsstatcache -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.4-22E235-71825a6d136aa4733edcbe86ece5525b.sdkstatcache -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-generated-files.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-own-target-headers.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-all-target-headers.hmap -Xcc -iquote -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/TusFinanzas-project-headers.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources-normal/arm64 -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources/arm64 -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources -Xcc -DDEBUG\=1 -module-name TusFinanzas -frontend-parseable-output -disable-clang-spi -target-sdk-version 18.4 -target-sdk-name iphonesimulator18.4 -external-plugin-path /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -external-plugin-path /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/lib/swift/host/plugins\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/lib/swift/host/plugins -emit-module-doc-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas.swiftdoc -emit-module-source-info-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas.swiftsourceinfo -emit-objc-header-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas-Swift.h -serialize-diagnostics-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas-master-emit-module.dia -emit-dependencies-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas-master-emit-module.d -o /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas.swiftmodule -emit-abi-descriptor-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/Objects-normal/arm64/TusFinanzas.abi.json
+
+EmitSwiftModule normal arm64 (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/TusFinanzaswidget.swift:5:8: error: invalid redeclaration of 'TusFinanzasWidgets'
+struct TusFinanzasWidgets: WidgetBundle {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzasWidget_OLD/TusFinanzasWidget.swift:5:8: note: 'TusFinanzasWidgets' previously declared here
+struct TusFinanzasWidgets: WidgetBundle {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzasWidget_OLD/TusFinanzasWidget.swift:5:8: note: 'TusFinanzasWidgets' previously declared here
+struct TusFinanzasWidgets: WidgetBundle {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Views/AddGPTransactionView.swift:13:34: error: 'GPCategory' is ambiguous for type lookup in this context
+    @State private var category: GPCategory = .otros
+                                 ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Views/AddGPTransactionView.swift:29:36: error: 'GPCategory' is ambiguous for type lookup in this context
+    private var prefilledCategory: GPCategory {
+                                   ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Views/AddGPTransactionView.swift:598:47: error: 'GPCategory' is ambiguous for type lookup in this context
+    private func colorForCategory(_ category: GPCategory) -> Color {
+                                              ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/URLSchemeConfig.swift:19:57: error: 'GPCategory' is ambiguous for type lookup in this context
+    static func buildAddGPURL(amount: Double, category: GPCategory, autoSave: Bool = false) -> URL? {
+                                                        ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/URLSchemeConfig.swift:40:73: error: 'GPCategory' is ambiguous for type lookup in this context
+    static func parseAddGPURL(_ url: URL) -> (amount: Double, category: GPCategory)? {
+                                                                        ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/URLSchemeConfig.swift:60:81: error: 'GPCategory' is ambiguous for type lookup in this context
+    static func parseAddGPURLExtended(_ url: URL) -> (amount: Double, category: GPCategory, autoSave: Bool)? {
+                                                                                ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/URLSchemeConfig.swift:85:81: error: 'GPCategory' is ambiguous for type lookup in this context
+    static func parseAddGPURLComplete(_ url: URL) -> (amount: Double, category: GPCategory, customCategory: String?, paymentMethod: PaymentMethod, customPaymentMethod: String?, autoSave: Bool)? {
+                                                                                ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:15:28: error: 'WidgetData' is ambiguous for type lookup in this context
+    static func empty() -> WidgetData {
+                           ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:5:8: note: found this candidate
+struct WidgetData: Codable {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift:4:8: note: found this candidate
+struct WidgetData {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:5:8: error: invalid redeclaration of 'WidgetData'
+struct WidgetData: Codable {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift:4:8: note: 'WidgetData' previously declared here
+struct WidgetData {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift:4:8: note: 'WidgetData' previously declared here
+struct WidgetData {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:37:29: error: 'WidgetData' is ambiguous for type lookup in this context
+    func getWidgetData() -> WidgetData {
+                            ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:5:8: note: found this candidate
+struct WidgetData: Codable {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift:4:8: note: found this candidate
+struct WidgetData {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:62:42: error: 'WidgetData' is ambiguous for type lookup in this context
+    private func getSavedWidgetData() -> WidgetData? {
+                                         ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:5:8: note: found this candidate
+struct WidgetData: Codable {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift:4:8: note: found this candidate
+struct WidgetData {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:84:59: error: 'WidgetData' is ambiguous for type lookup in this context
+    private func calculateWidgetDataFromTransactions() -> WidgetData {
+                                                          ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:5:8: note: found this candidate
+struct WidgetData: Codable {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift:4:8: note: found this candidate
+struct WidgetData {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:174:33: error: 'WidgetData' is ambiguous for type lookup in this context
+    func saveWidgetData(_ data: WidgetData) {
+                                ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:5:8: note: found this candidate
+struct WidgetData: Codable {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift:4:8: note: found this candidate
+struct WidgetData {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:28:7: error: invalid redeclaration of 'WidgetDataProvider'
+class WidgetDataProvider {
+      ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift:28:7: note: 'WidgetDataProvider' previously declared here
+class WidgetDataProvider {
+      ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift:28:7: note: 'WidgetDataProvider' previously declared here
+class WidgetDataProvider {
+      ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:113:21: error: 'GPCategory' is ambiguous for type lookup in this context
+    var gpCategory: GPCategory?
+                    ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Views/QuickGPEntryView.swift:22:34: error: 'GPCategory' is ambiguous for type lookup in this context
+    @State private var category: GPCategory
+                                 ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Views/QuickGPEntryView.swift:13:26: error: 'GPCategory' is ambiguous for type lookup in this context
+    let initialCategory: GPCategory
+                         ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Views/QuickGPEntryView.swift:31:78: error: 'GPCategory' is ambiguous for type lookup in this context
+    init(isPresented: Binding<Bool>, initialAmount: Double, initialCategory: GPCategory, initialPaymentMethod: PaymentMethod = .cash, initialCustomCategory: String? = nil, initialCustomPaymentMethod: String? = nil, isQuickAmountEntry: Bool, viewModel: FinanceViewModel) {
+                                                                             ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Views/QuickGPEntryView.swift:540:46: error: 'GPCategory' is ambiguous for type lookup in this context
+    private func iconForCategory(_ category: GPCategory) -> String {
+                                             ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Views/QuickGPEntryView.swift:564:47: error: 'GPCategory' is ambiguous for type lookup in this context
+    private func colorForCategory(_ category: GPCategory) -> Color {
+                                              ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: error: invalid redeclaration of 'GPCategory'
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: 'GPCategory' previously declared here
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: 'GPCategory' previously declared here
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:96:8: error: type 'Transaction' does not conform to protocol 'Decodable'
+struct Transaction: Identifiable, Codable {
+       ^
+Swift.Decodable.init:2:1: note: protocol requires initializer 'init(from:)' with type 'Decodable'
+init(from decoder: any Decoder) throws}
+^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:113:9: note: cannot automatically synthesize 'Decodable' because 'GPCategory?' does not conform to 'Decodable'
+    var gpCategory: GPCategory?
+        ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:133:22: error: 'GPCategory' is ambiguous for type lookup in this context
+         gpCategory: GPCategory? = nil,
+                     ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:96:8: error: type 'Transaction' does not conform to protocol 'Encodable'
+struct Transaction: Identifiable, Codable {
+       ^
+Swift.Encodable.encode:2:6: note: protocol requires function 'encode(to:)' with type 'Encodable'
+func encode(to encoder: any Encoder) throws}
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:113:9: note: cannot automatically synthesize 'Encodable' because 'GPCategory?' does not conform to 'Encodable'
+    var gpCategory: GPCategory?
+        ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Views/EditGPTransactionView.swift:14:34: error: 'GPCategory' is ambiguous for type lookup in this context
+    @State private var category: GPCategory
+                                 ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzasWidget_OLD/TusFinanzasWidget.swift:4:1: error: 'main' attribute can only apply to one type in a module
+@main
+^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzasApp.swift:3:1: error: 'main' attribute can only apply to one type in a module
+@main
+^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/TusFinanzasWidgetMain.swift:5:1: error: 'main' attribute can only apply to one type in a module
+@main
+^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/DeepLinkHandler.swift:12:39: error: 'GPCategory' is ambiguous for type lookup in this context
+    @Published var prefilledCategory: GPCategory = .otros
+                                      ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/QuickEntryWidget.swift:10:38: error: cannot find type 'QuickEntryIntent' in scope
+    func snapshot(for configuration: QuickEntryIntent, in context: Context) async -> QuickEntryWidgetEntry {
+                                     ^~~~~~~~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/QuickEntryWidget.swift:14:38: error: cannot find type 'QuickEntryIntent' in scope
+    func timeline(for configuration: QuickEntryIntent, in context: Context) async -> Timeline<QuickEntryWidgetEntry> {
+                                     ^~~~~~~~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/QuickEntryWidget.swift:5:8: error: type 'QuickEntryWidgetProvider' does not conform to protocol 'AppIntentTimelineProvider'
+struct QuickEntryWidgetProvider: AppIntentTimelineProvider {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/QuickEntryWidget.swift:5:8: note: add stubs for conformance
+struct QuickEntryWidgetProvider: AppIntentTimelineProvider {
+       ^
+WidgetKit.AppIntentTimelineProvider.Entry:2:16: note: protocol requires nested type 'Entry'
+associatedtype Entry : TimelineEntry}
+               ^
+WidgetKit.AppIntentTimelineProvider.Intent:2:16: note: protocol requires nested type 'Intent'
+associatedtype Intent : WidgetConfigurationIntent}
+               ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/QuickEntryWidget.swift:23:24: error: cannot find type 'QuickEntryIntent' in scope
+    let configuration: QuickEntryIntent
+                       ^~~~~~~~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/QuickEntryWidget.swift:28:19: error: 'GPCategory' is ambiguous for type lookup in this context
+    var category: GPCategory
+                  ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/Transaction.swift:84:6: note: found this candidate
+enum GPCategory: String, CaseIterable, Codable {
+     ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/GPCategory.swift:4:13: note: found this candidate
+public enum GPCategory: String, CaseIterable, Codable, Sendable {
+            ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift:14:28: error: 'WidgetData' is ambiguous for type lookup in this context
+    static func empty() -> WidgetData {
+                           ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:5:8: note: found this candidate
+struct WidgetData: Codable {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift:4:8: note: found this candidate
+struct WidgetData {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift:35:29: error: 'WidgetData' is ambiguous for type lookup in this context
+    func getWidgetData() -> WidgetData {
+                            ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:5:8: note: found this candidate
+struct WidgetData: Codable {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift:4:8: note: found this candidate
+struct WidgetData {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzasWidget_OLD/TipsWidget.swift:31:21: error: 'WidgetData' is ambiguous for type lookup in this context
+    let widgetData: WidgetData
+                    ^~~~~~~~~~
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/Shared/WidgetDataProvider.swift:5:8: note: found this candidate
+struct WidgetData: Codable {
+       ^
+/Users/rogalan/Desktop/Proyectos Xcode/TusFinanzas/TusFinanzaswidget/WidgetData.swift:4:8: note: found this candidate
+struct WidgetData {
+       ^
+
+SwiftCompile normal arm64 Compiling\ CategoriesView.swift,\ TusFinanzasApp_simple.swift,\ QuickEntryWidget.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/CategoriesView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzasApp_simple.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzaswidget/QuickEntryWidget.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/CategoriesView.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzasApp_simple.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftCompile normal arm64 /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzaswidget/QuickEntryWidget.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling TipsWidget.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 Compiling\ TransactionListView.swift,\ TusFinanzaswidgetBundle.swift,\ GeneratedAssetSymbols.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/TransactionListView.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/TusFinanzaswidget/TusFinanzaswidgetBundle.swift /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzas.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+
+SwiftDriverJobDiscovery normal arm64 Compiling QuickEntryWidget.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftCompile normal arm64 Compiling\ DeepLinkHandler.swift,\ StringExtensions.swift,\ TransactionRow.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/DeepLinkHandler.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Shared/StringExtensions.swift /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzas/Views/TransactionRow.swift (in target 'TusFinanzas' from project 'TusFinanzas')
+
+SwiftDriverJobDiscovery normal arm64 Compiling Transaction.swift (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+
+SwiftDriver\ Compilation TusFinanzaswidgetExtension normal arm64 com.apple.xcode.tools.swift.compiler (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name TusFinanzaswidgetExtension -Onone -enforce-exclusivity\=checked @/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.4.sdk -target arm64-apple-ios18.4-simulator -g -module-cache-path /Users/rogalan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -application-extension -enable-testing -index-store-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Index.noindex/DataStore -swift-version 5 -I /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator -F /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64 -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.4-22E235-71825a6d136aa4733edcbe86ece5525b.sdkstatcache -output-file-map /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/rogalan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension_const_extract_protocols.json -Xcc -iquote -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-generated-files.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-own-target-headers.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-all-target-headers.hmap -Xcc -iquote -Xcc /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/TusFinanzaswidgetExtension-project-headers.hmap -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/DerivedSources-normal/arm64 -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/DerivedSources/arm64 -Xcc -I/Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Objects-normal/arm64/TusFinanzaswidgetExtension-Swift.h -working-directory /Users/rogalan/Desktop/Proyectos\ Xcode -experimental-emit-module-separately -disable-cmo
+
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftEmitModule normal arm64 Emitting\ module\ for\ TusFinanzas (in target 'TusFinanzas' from project 'TusFinanzas')
+	EmitSwiftModule normal arm64 (in target 'TusFinanzas' from project 'TusFinanzas')
+	Building project TusFinanzas with scheme TusFinanzas
+(3 failures)

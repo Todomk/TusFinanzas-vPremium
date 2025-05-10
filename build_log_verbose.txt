@@ -1,0 +1,29 @@
+PhaseScriptExecution Run\ Script /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Intermediates.noindex/TusFinanzas.build/Debug-iphonesimulator/TusFinanzaswidgetExtension.build/Script-3BA4A88F2DCDE1C2005C406D.sh (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    export ACTION\=build
+    export AD_HOC_CODE_SIGNING_ALLOWED\=YES
+    export ALLOW_BUILD_REQUEST_OVERRIDES\=NO
+    export ALLOW_TARGET_PLATFORM_SPECIALIZATION\=NO
+    export ALTERNATE_GROUP\=staff
+    export ALTERNATE_MODE\=u+w,go-w,a+rX
+    export ALTERNATE_OWNER\=rogalan
+    export ALTERNATIVE_DISTRIBUTION_WEB\=NO
+    export ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES\=NO
+    export ALWAYS_SEARCH_USER_PATHS\=NO
+    export ALWAYS_USE_SEPARATE_HEADERMAPS\=NO
+    export APPLICATION_EXTENSION_API_ONLY\=YES
+    export APPLY_RULES_IN_COPY_FILES\=NO
+    export APPLY_RULES_IN_COPY_HEADERS\=NO
+    export APP_SHORTCUTS_ENABLE_FLEXIBLE_MATCHING\=YES
+    export ARCHS\=arm64
+    export ARCHS_STANDARD\=arm64\ x86_64
+    export ARCHS_STANDARD_32_64_BIT\=arm64\ x86_64
+    export ARCHS_STANDARD_64_BIT\=arm64\ x86_64
+--
+Command PhaseScriptExecution failed with a nonzero exit code
+
+ProcessInfoPlistFile /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.appex/Info.plist /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/Info.plist (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')
+    cd /Users/rogalan/Desktop/Proyectos\ Xcode
+    builtin-infoPlistUtility /Users/rogalan/Desktop/Proyectos\ Xcode/TusFinanzaswidget/Info.plist -producttype com.apple.product-type.app-extension -expandbuildsettings -format binary -platform iphonesimulator -o /Users/rogalan/Library/Developer/Xcode/DerivedData/TusFinanzas-ftqnmlznvsrujtdmvbgpwuukmbeb/Build/Products/Debug-iphonesimulator/TusFinanzaswidgetExtension.appex/Info.plist
+
+warning: Run script build phase 'Run Script' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'TusFinanzaswidgetExtension' from project 'TusFinanzas')

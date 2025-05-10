@@ -1,0 +1,862 @@
+import Foundation
+import SwiftUI
+
+class FinanceViewModel: ObservableObject {
+    @Published var incomes: [Transaction] = [] {
+        didSet {
+            StorageManager.shared.saveIncomes(incomes)
+            updateDerivedProperties()
+        }
+    }
+    
+    @Published var expenses: [Transaction] = [] {
+        didSet {
+            StorageManager.shared.saveExpenses(expenses)
+            updateDerivedProperties()
+        }
+    }
+    
+    @Published var subscriptions: [Transaction] = [] {
+        didSet {
+            StorageManager.shared.saveSubscriptions(subscriptions)
+            updateDerivedProperties()
+        }
+    }
+    
+    @Published var gpTransactions: [Transaction] = [] {
+        didSet {
+            StorageManager.shared.saveGPTransactions(gpTransactions)
+            updateDerivedProperties()
+    }
+    }
+    
+    @Published var tips: [Transaction] = [] {
+        didSet {
+            StorageManager.shared.saveTips(tips)
+            updateDerivedProperties()
+        }
+    }
+    
+    @Published var showNextMonth: Bool = false {
+        didSet {
+            updateNextMonthDate()
+        }
+    }
+    
+    @Published var nextMonthDate: Date = {
+        let calendar = Calendar.current
+        return calendar.date(byAdding: .month, value: 1, to: Date()) ?? Date()
+    }()
+    
+    // Variables para controlar la visualización de modales
+    @Published var showingAddSubscriptionTransaction: Bool = false
+    @Published var showingAddGPTransaction: Bool = false
+    
+    @Published private(set) var pendingIncome: Double = 0
+    @Published private(set) var completedIncome: Double = 0
+    @Published private(set) var pendingExpenses: Double = 0
+    @Published private(set) var completedExpenses: Double = 0
+    @Published private(set) var pendingSubscriptions: Double = 0
+    @Published private(set) var completedSubscriptions: Double = 0
+    @Published private(set) var pendingGP: Double = 0
+    @Published private(set) var completedGP: Double = 0
+    @Published private(set) var totalGP: Double = 0
+    @Published private(set) var totalSubscriptions: Double = 0
+    @Published private(set) var totalIncome: Double = 0
+    @Published private(set) var totalExpenses: Double = 0
+    
+    // Propiedades para acceder a las transacciones
+    var incomeTransactions: [Transaction] {
+        get { incomes }
+        set { incomes = newValue }
+    }
+    
+    var expenseTransactions: [Transaction] {
+        get { expenses }
+        set { expenses = newValue }
+    }
+    
+    init() {
+        print("FinanceViewModel: Inicializando")
+        // Cargar datos iniciales
+        loadData()
+        
+        // Actualizar propiedades derivadas después de un breve retraso
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.updateDerivedProperties()
+            // Asegurar la sincronización inicial de propinas
+            self.syncTipsWithIncomes()
+            print("FinanceViewModel: Inicialización completada")
+        }
+    }
+    
+    private func updateDerivedProperties() {
+        print("FinanceViewModel: Actualizando propiedades derivadas")
+        
+        // Calcular totales de ingresos (excluyendo el ítem representativo de propinas)
+        let nonTipsIncomes = incomes.filter { $0.type != .tips }
+        let newPendingIncome = nonTipsIncomes.filter { !$0.isCompleted }.reduce(0) { $0 + $1.amount }
+        let newCompletedIncome = nonTipsIncomes.filter { $0.isCompleted }.reduce(0) { $0 + $1.amount }
+        
+        // Añadir el total real de propinas al completedIncome
+        let tipsTotal = tips.reduce(0) { $0 + $1.amount }
+        let finalCompletedIncome = newCompletedIncome + tipsTotal
+        
+        // Calcular totales de gastos (excluyendo Gastos Diarios)
+        let nonGPExpenses = expenses.filter { $0.concept != "Gastos Diarios" }
+        let newPendingExpenses = nonGPExpenses.filter { !$0.isCompleted }.reduce(0) { $0 + $1.amount }
+        let newCompletedExpenses = nonGPExpenses.filter { $0.isCompleted }.reduce(0) { $0 + $1.amount }
+        
+        // Calcular totales de suscripciones
+        let newPendingSubscriptions = subscriptions.filter { !$0.isCompleted }.reduce(0) { $0 + $1.amount }
+        let newCompletedSubscriptions = subscriptions.filter { $0.isCompleted }.reduce(0) { $0 + $1.amount }
+        
+        // Calcular totales de GP
+        let newPendingGP = gpTransactions.filter { !$0.isCompleted }.reduce(0) { $0 + $1.amount }
+        let newCompletedGP = gpTransactions.filter { $0.isCompleted }.reduce(0) { $0 + $1.amount }
+        
+        // Actualizar solo si hay cambios
+        if pendingIncome != newPendingIncome || completedIncome != finalCompletedIncome {
+            pendingIncome = newPendingIncome
+            completedIncome = finalCompletedIncome
+            // Actualizar totalIncome como la suma
+            totalIncome = pendingIncome + completedIncome
+        }
+        
+        if pendingExpenses != newPendingExpenses || completedExpenses != newCompletedExpenses {
+            pendingExpenses = newPendingExpenses
+            completedExpenses = newCompletedExpenses
+        }
+        
+        if pendingSubscriptions != newPendingSubscriptions || completedSubscriptions != newCompletedSubscriptions {
+            pendingSubscriptions = newPendingSubscriptions
+            completedSubscriptions = newCompletedSubscriptions
+        }
+        
+        if pendingGP != newPendingGP || completedGP != newCompletedGP {
+            pendingGP = newPendingGP
+            completedGP = newCompletedGP
+        }
+        
+        print("FinanceViewModel: Propiedades derivadas actualizadas")
+    }
+    
+    func loadData() {
+        print("FinanceViewModel: Iniciando carga de datos")
+        
+        // Cargar GP primero
+        gpTransactions = StorageManager.shared.loadGPTransactions()
+        print("StorageManager: Transacciones GP cargadas correctamente: \(gpTransactions.count)")
+        
+        // Cargar tips
+        tips = StorageManager.shared.loadTips()
+        print("StorageManager: Propinas cargadas correctamente: \(tips.count)")
+        
+        // Cargar ingresos (excluyendo propinas antiguas)
+        incomes = StorageManager.shared.loadIncomes().filter { $0.type != .tips }
+        print("StorageManager: Ingresos cargados correctamente: \(incomes.count)")
+        
+        // Cargar suscripciones
+        subscriptions = StorageManager.shared.loadSubscriptions()
+        print("StorageManager: Suscripciones cargadas correctamente: \(subscriptions.count)")
+        
+        // Cargar gastos
+        expenses = StorageManager.shared.loadExpenses()
+        print("StorageManager: Gastos cargados correctamente: \(expenses.count)")
+        
+        // Sincronizar propinas con ingresos inmediatamente después de cargar los datos
+        syncTipsWithIncomes()
+        
+        // Verificar si existe el ítem de Gastos Diarios
+        let gpTotal = gpTransactions.reduce(0) { $0 + $1.amount }
+        if let existingGP = expenses.first(where: { $0.concept == "Gastos Diarios" }) {
+            // Actualizar el monto si es diferente
+            if existingGP.amount != gpTotal {
+                var updatedGP = existingGP
+                updatedGP.amount = gpTotal
+                deleteTransaction(existingGP)
+                addTransaction(updatedGP)
+            }
+        } else {
+            // Crear el ítem de Gastos Diarios si no existe
+            let gpExpense = Transaction(
+                amount: gpTotal,
+                concept: "Gastos Diarios",
+                type: .expense,
+                periodicity: .monthly,
+                paymentType: .manual,
+                paymentMethod: .cash
+            )
+            addTransaction(gpExpense)
+        }
+        
+        updateDerivedProperties()
+    }
+    
+    // Nueva función centralizada para sincronizar propinas con ingresos
+    private func syncTipsWithIncomes() {
+        print("FinanceViewModel: Iniciando sincronización de propinas con ingresos")
+        
+        // Obtener el total del mes actual usando la misma función que en la vista de propinas
+        var totalTips = 0.0
+        if let tipsTransaction = findTipsTransaction() {
+            totalTips = getCurrentMonthTipsTotal(tipTransaction: tipsTransaction)
+        }
+        
+        print("FinanceViewModel: Total del mes actual: \(totalTips)€")
+        
+        // Crear un nuevo array de incomes sin propinas
+        var newIncomes = incomes.filter { $0.type != .tips }
+        
+        // Crear el nuevo ítem de propinas con el total del mes
+        let tipsIncome = Transaction(
+            amount: totalTips,
+            concept: "Propinas",
+            isCompleted: true,
+            type: .tips,
+            periodicity: .monthly,
+            paymentType: .manual,
+            paymentMethod: .cash
+        )
+        
+        // Añadir el ítem de propinas al nuevo array
+        newIncomes.append(tipsIncome)
+        
+        // Actualizar el array de incomes
+        incomes = newIncomes
+        
+        // Guardar los cambios
+        StorageManager.shared.saveIncomes(incomes)
+        
+        // Actualizar totalIncome para reflejar los cambios
+        totalIncome = pendingIncome + completedIncome
+        
+        // Forzar la actualización de la UI
+        DispatchQueue.main.async {
+            self.objectWillChange.send()
+            print("FinanceViewModel: Sincronización completada - Total del mes: \(totalTips)€")
+        }
+    }
+    
+    func getCurrentMonthTipsTotal(tipTransaction: Transaction) -> Double {
+        guard let weeklyAmounts = tipTransaction.weeklyAmounts else {
+            print("TipsView: No hay transacción para calcular total mensual")
+            return 0
+        }
+        
+        // Sumar todas las cantidades del listado
+        let total = weeklyAmounts.values.reduce(0) { sum, weekTip in
+            return sum + weekTip
+        }
+        
+        print("TipsView: Total mensual calculado: \(total)€")
+        return total
+    }
+    
+    func addTransaction(_ transaction: Transaction) {
+        print("FinanceViewModel: Añadiendo transacción - Tipo: \(transaction.type), Concepto: \(transaction.concept)")
+        
+        switch transaction.type {
+        case .income:
+            if transaction.type != .tips {
+            incomes.append(transaction)
+            }
+            StorageManager.shared.saveIncomes(incomes)
+        case .expense:
+            if transaction.concept == "Gastos Diarios" {
+                // Si es GP, actualizar el monto con el total actual de GP
+                var updatedGP = transaction
+                updatedGP.amount = gpTransactions.reduce(0) { $0 + $1.amount }
+                expenses.append(updatedGP)
+            } else {
+            expenses.append(transaction)
+            }
+            StorageManager.shared.saveExpenses(expenses)
+        case .subscription:
+            subscriptions.append(transaction)
+            StorageManager.shared.saveSubscriptions(subscriptions)
+        case .tips:
+            tips.append(transaction)
+            StorageManager.shared.saveTips(tips)
+            
+            // Actualizar el ítem representativo de propinas en ingresos
+            incomes = incomes.filter { $0.type != .tips }
+            let tipsTotal = tips.reduce(0) { $0 + $1.amount }
+            let tipsIncome = Transaction(
+                amount: tipsTotal,
+                concept: "Propinas",
+                isCompleted: true,
+                type: .tips,
+                periodicity: .monthly,
+                paymentType: .manual,
+                paymentMethod: .cash
+            )
+            incomes.append(tipsIncome)
+            StorageManager.shared.saveIncomes(incomes)
+        case .gp:
+            gpTransactions.append(transaction)
+            StorageManager.shared.saveGPTransactions(gpTransactions)
+            
+            // Actualizar el monto del ítem de Gastos Diarios
+            if let existingGP = expenses.first(where: { $0.concept == "Gastos Diarios" }) {
+                var updatedGP = existingGP
+                updatedGP.amount = gpTransactions.reduce(0) { $0 + $1.amount }
+                deleteTransaction(existingGP)
+                addTransaction(updatedGP)
+            }
+        }
+        
+        updateDerivedProperties()
+    }
+    
+    func deleteTransaction(_ transaction: Transaction) {
+        print("FinanceViewModel: Eliminando transacción - Tipo: \(transaction.type), Concepto: \(transaction.concept)")
+        
+        switch transaction.type {
+        case .income:
+            incomes.removeAll { $0.id == transaction.id }
+            StorageManager.shared.saveIncomes(incomes)
+        case .expense:
+            expenses.removeAll { $0.id == transaction.id }
+            StorageManager.shared.saveExpenses(expenses)
+        case .subscription:
+            subscriptions.removeAll { $0.id == transaction.id }
+            StorageManager.shared.saveSubscriptions(subscriptions)
+        case .tips:
+            tips.removeAll { $0.id == transaction.id }
+            StorageManager.shared.saveTips(tips)
+            
+            // Actualizar el ítem representativo de propinas en ingresos
+            incomes = incomes.filter { $0.type != .tips }
+            let tipsTotal = tips.reduce(0) { $0 + $1.amount }
+            let tipsIncome = Transaction(
+                amount: tipsTotal,
+                concept: "Propinas",
+                isCompleted: true,
+                type: .tips,
+                periodicity: .monthly,
+                paymentType: .manual,
+                paymentMethod: .cash
+            )
+            incomes.append(tipsIncome)
+            StorageManager.shared.saveIncomes(incomes)
+        case .gp:
+            gpTransactions.removeAll { $0.id == transaction.id }
+            StorageManager.shared.saveGPTransactions(gpTransactions)
+            
+            // Actualizar el monto del ítem de Gastos Diarios
+            if let existingGP = expenses.first(where: { $0.concept == "Gastos Diarios" }) {
+                var updatedGP = existingGP
+                updatedGP.amount = gpTransactions.reduce(0) { $0 + $1.amount }
+                deleteTransaction(existingGP)
+                addTransaction(updatedGP)
+            }
+        }
+        
+        updateDerivedProperties()
+    }
+    
+    var benefits: Double {
+        (pendingIncome + completedIncome) - (pendingExpenses + completedExpenses)
+    }
+    
+    func toggleTransactionCompletion(_ transaction: Transaction) -> (success: Bool, message: String?) {
+        let currentDate = Date()
+        
+        // Si es una transacción de tipo propinas que está intentando ser desmarcada
+        if transaction.type == .tips && transaction.isCompleted {
+            // Verificar si hay propinas registradas para el mes actual
+            let calendar = Calendar.current
+            let now = Date()
+            
+            // Obtener el primer y último día del mes actual
+            var components = calendar.dateComponents([.year, .month], from: now)
+            components.day = 1
+            guard let startOfMonth = calendar.date(from: components),
+                  let endOfMonth = calendar.date(byAdding: DateComponents(month: 1, day: -1), to: startOfMonth) else {
+                return (true, nil) // En caso de error, permitir la acción por defecto
+            }
+            
+            if let weeklyAmounts = transaction.weeklyAmounts {
+                // Filtrar para ver si hay montos para el mes actual
+                let hasCurrentMonthRecords = weeklyAmounts.contains { (date, _) in
+                    return date >= startOfMonth && date <= endOfMonth
+                }
+                
+                if hasCurrentMonthRecords {
+                    // No permitir desmarcar y devolver mensaje
+                    return (false, "Este item no se puede desmarcar porque las propinas ya han sido cobradas")
+                }
+            }
+        }
+        
+        // Proceder con la lógica normal para otros tipos de transacciones o si no hay propinas registradas
+        switch transaction.type {
+        case .income:
+            if let index = incomes.firstIndex(where: { $0.id == transaction.id }) {
+                if !incomes[index].isCompleted {
+                    incomes[index].lastResetDate = currentDate
+                }
+                incomes[index].isCompleted.toggle()
+            }
+        case .expense:
+            if let index = expenses.firstIndex(where: { $0.id == transaction.id }) {
+                if !expenses[index].isCompleted {
+                    expenses[index].lastResetDate = currentDate
+                }
+                expenses[index].isCompleted.toggle()
+            }
+        case .subscription:
+            if let index = subscriptions.firstIndex(where: { $0.id == transaction.id }) {
+                if !subscriptions[index].isCompleted {
+                    subscriptions[index].lastResetDate = currentDate
+                }
+                subscriptions[index].isCompleted.toggle()
+            }
+        case .tips:
+            if let index = tips.firstIndex(where: { $0.id == transaction.id }) {
+                if !tips[index].isCompleted {
+                    tips[index].lastResetDate = currentDate
+                }
+                tips[index].isCompleted.toggle()
+            }
+        case .gp:
+            if let index = gpTransactions.firstIndex(where: { $0.id == transaction.id }) {
+                if !gpTransactions[index].isCompleted {
+                    gpTransactions[index].lastResetDate = currentDate
+                }
+                gpTransactions[index].isCompleted.toggle()
+            }
+        }
+        
+        return (true, nil)
+    }
+    
+    func resetCompletedTransactions() {
+        // Verificar si estamos en día 25 o posterior
+        let calendar = Calendar.current
+        let currentDay = calendar.component(.day, from: Date())
+        
+        if currentDay >= 25 {
+            showNextMonth = true
+        }
+        
+        let currentDate = Date()
+        
+        // Función para determinar si debe resetearse una transacción basada en su periodicidad
+        func shouldResetTransaction(_ transaction: Transaction) -> Bool {
+            // Si la periodicidad es mensual, siempre resetear
+            if transaction.periodicity == .monthly {
+                return true
+            }
+            
+            // Si la periodicidad es semanal, verificar si ha pasado una semana
+            if transaction.periodicity == .weekly {
+                let calendar = Calendar.current
+                // Comprobar si ha pasado al menos una semana desde el último reset
+                if let lastResetDate = transaction.lastResetDate,
+                   let nextResetDate = calendar.date(byAdding: .day, value: 7, to: lastResetDate) {
+                    return currentDate >= nextResetDate
+                }
+                return false
+            }
+            
+            // Si nunca se ha reseteado antes, resetear ahora
+            guard let lastResetDate = transaction.lastResetDate else {
+                return true
+            }
+            
+            // Calcular los meses que deben pasar según la periodicidad
+            let calendar = Calendar.current
+            var monthsToAdd = 1
+            
+            switch transaction.periodicity {
+            case .weekly:
+                monthsToAdd = 0 // Para semanal, manejamos diferente - se resetea cada semana
+            case .monthly:
+                monthsToAdd = 1
+            case .bimonthly:
+                monthsToAdd = 2
+            case .quarterly:
+                monthsToAdd = 3
+            case .semiannual:
+                monthsToAdd = 6
+            case .annual:
+                monthsToAdd = 12
+            case .biannual:
+                monthsToAdd = 24
+            }
+            
+            // Calcular la próxima fecha de reseteo
+            if let nextResetDate = calendar.date(byAdding: .month, value: monthsToAdd, to: lastResetDate) {
+                // Si la fecha actual es posterior a la próxima fecha de reseteo, entonces resetear
+                return currentDate >= nextResetDate
+            }
+            
+            return false
+        }
+        
+        // Resetear ingresos
+        for i in 0..<incomes.count {
+            if incomes[i].isCompleted {
+                if shouldResetTransaction(incomes[i]) {
+                    incomes[i].isCompleted = false
+                    incomes[i].lastResetDate = currentDate
+                }
+            }
+        }
+        
+        // Resetear gastos (excepto "Suscripciones")
+        for i in 0..<expenses.count {
+            if expenses[i].isCompleted && expenses[i].concept != "Suscripciones" {
+                if shouldResetTransaction(expenses[i]) {
+                    expenses[i].isCompleted = false
+                    expenses[i].lastResetDate = currentDate
+                }
+            }
+        }
+        
+        // Resetear suscripciones
+        for i in 0..<subscriptions.count {
+            if subscriptions[i].isCompleted {
+                if shouldResetTransaction(subscriptions[i]) {
+                    subscriptions[i].isCompleted = false
+                    subscriptions[i].lastResetDate = currentDate
+                }
+            }
+        }
+        
+        // Resetear transacciones de GP
+        for i in 0..<gpTransactions.count {
+            if gpTransactions[i].isCompleted {
+                if shouldResetTransaction(gpTransactions[i]) {
+                    gpTransactions[i].isCompleted = false
+                    gpTransactions[i].lastResetDate = currentDate
+                }
+            }
+        }
+        
+        // Resetear propinas
+        for i in 0..<tips.count {
+            if tips[i].isCompleted {
+                if shouldResetTransaction(tips[i]) {
+                    tips[i].isCompleted = false
+                    tips[i].lastResetDate = currentDate
+                }
+            }
+        }
+    }
+    
+    // MARK: - Funciones para gestionar propinas
+    
+    func findTipsTransaction() -> Transaction? {
+        // Buscar si ya existe una transacción de tipo propinas
+        return tips.first { $0.type == .tips }
+    }
+    
+    func addWeeklyTips(amount: Double, date: Date, note: String) -> (success: Bool, message: String?) {
+        print("FinanceViewModel: Añadiendo propina: \(amount)€ para fecha \(date)")
+        
+        // Validar que la fecha no sea futura
+        let calendar = Calendar.current
+        let today = Date()
+        let comparison = calendar.compare(date, to: today, toGranularity: .day)
+        
+        if comparison == .orderedDescending {
+            return (false, "No te adelantes a los acontecimientos. Esta fecha es posterior a la actual")
+        }
+        
+        // Normalizar la fecha al inicio de la semana
+        let weekComponents = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: date)
+        guard let weekStartDate = calendar.date(from: weekComponents) else {
+            return (false, "Error al calcular la fecha de la semana")
+        }
+        
+        if let tipsTransaction = findTipsTransaction() {
+            // Verificar si ya existe un registro para esta semana
+            if let existingAmount = tipsTransaction.weeklyAmounts?[weekStartDate] {
+                print("FinanceViewModel: Ya existe un registro para esta semana: \(existingAmount)€")
+                return (false, "Las propinas de esta semana ya existen. Si necesitas establecerla de nuevo borra antes el registro.")
+            }
+            
+            // Actualizar la transacción existente
+            print("FinanceViewModel: Actualizando transacción existente ID: \(tipsTransaction.id)")
+            
+            // Crear una copia del diccionario o uno nuevo si es nil
+            var weeklyAmounts = tipsTransaction.weeklyAmounts ?? [:]
+            weeklyAmounts[weekStartDate] = amount
+            
+            // Crear una transacción actualizada
+            var updatedTransaction = tipsTransaction
+            updatedTransaction.weeklyAmounts = weeklyAmounts
+            updatedTransaction.amount = amount
+            
+            // Actualizar en el array de tips
+            if let index = tips.firstIndex(where: { $0.id == tipsTransaction.id }) {
+                tips[index] = updatedTransaction
+                StorageManager.shared.saveTips(tips)
+                
+                // Sincronizar con ingresos
+                syncTipsWithIncomes()
+                
+                return (true, nil)
+            }
+            return (false, "Error al actualizar la transacción")
+        } else {
+            // Crear una nueva transacción de propinas
+            print("FinanceViewModel: Creando nueva transacción de propinas")
+            let weeklyAmounts = [weekStartDate: amount]
+            
+            // Crear una nueva transacción
+            let tipsTransaction = Transaction(
+                amount: amount,
+                concept: "Propinas",
+                isCompleted: true,
+                type: .tips,
+                periodicity: .monthly,
+                paymentType: .manual,
+                paymentMethod: .cash,
+                weekDay: .friday,
+                automaticPaymentOption: nil,
+                startDate: weekStartDate,
+                weeklyAmounts: weeklyAmounts
+            )
+            
+            // Añadir la nueva transacción
+            tips.append(tipsTransaction)
+            StorageManager.shared.saveTips(tips)
+            
+            // Sincronizar con ingresos
+            syncTipsWithIncomes()
+            
+            return (true, nil)
+        }
+    }
+    
+    // Nueva función auxiliar para mantener sincronizado el ítem de propinas en incomes
+    private func updateTipsIncomeItem() {
+        print("FinanceViewModel: Iniciando actualización del ítem de propinas en ingresos")
+        
+        // Eliminar el ítem anterior de propinas en incomes
+        incomes = incomes.filter { $0.type != .tips }
+        print("FinanceViewModel: Ítem anterior de propinas eliminado de ingresos")
+        
+        // Calcular el total actual de propinas usando el mismo método que getCurrentMonthTipsTotal
+        let calendar = Calendar.current
+        let now = Date()
+        let currentMonth = calendar.component(.month, from: now)
+        let currentYear = calendar.component(.year, from: now)
+        
+        var totalTips = 0.0
+        for tip in tips {
+            if let weeklyAmounts = tip.weeklyAmounts {
+                for (date, amount) in weeklyAmounts {
+                    let tipMonth = calendar.component(.month, from: date)
+                    let tipYear = calendar.component(.year, from: date)
+                    if tipMonth == currentMonth && tipYear == currentYear {
+                        totalTips += amount
+                    }
+                }
+            }
+        }
+        
+        print("FinanceViewModel: Total de propinas calculado: \(totalTips)€")
+        
+        // Crear y añadir el nuevo ítem de propinas
+        let tipsIncome = Transaction(
+            amount: totalTips,
+            concept: "Propinas",
+            isCompleted: true,
+            type: .tips,
+            periodicity: .monthly,
+            paymentType: .manual,
+            paymentMethod: .cash
+        )
+        incomes.append(tipsIncome)
+        print("FinanceViewModel: Nuevo ítem de propinas añadido a ingresos")
+        
+        // Guardar los cambios
+        StorageManager.shared.saveIncomes(incomes)
+        print("FinanceViewModel: Cambios guardados en el almacenamiento")
+        
+        // Actualizar totalIncome para reflejar los cambios
+        totalIncome = pendingIncome + completedIncome
+        
+        // Forzar la notificación de cambio
+        DispatchQueue.main.async {
+            self.objectWillChange.send()
+            print("FinanceViewModel: Notificación de cambio enviada")
+        }
+    }
+    
+    func getWeeklySummaries(tipTransaction: Transaction) -> [(date: Date, amount: Double)] {
+        guard let weeklyAmounts = tipTransaction.weeklyAmounts else {
+            return []
+        }
+        
+        // Convertir a array y ordenar por fecha
+        let summaries = weeklyAmounts.map { (date: $0.key, amount: $0.value) }
+            .sorted { $0.date < $1.date }
+        
+        print("FinanceViewModel: Obteniendo \(summaries.count) resúmenes semanales")
+        return summaries
+    }
+    
+    func getMonthlyTipsTotals(tipTransaction: Transaction) -> [(month: String, total: Double)] {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "es_ES")
+        dateFormatter.dateFormat = "MMMM yyyy"
+        
+        // Agrupar propinas por mes
+        var monthlyTotals: [String: Double] = [:]
+        
+        guard let weeklyAmounts = tipTransaction.weeklyAmounts else {
+            return []
+        }
+        
+        for (date, amount) in weeklyAmounts {
+            let monthYear = dateFormatter.string(from: date)
+            if let existing = monthlyTotals[monthYear] {
+                monthlyTotals[monthYear] = existing + amount
+            } else {
+                monthlyTotals[monthYear] = amount
+            }
+        }
+        
+        // Convertir a array de tuplas y ordenar por fecha (más reciente primero)
+        var sortedMonths = [(month: String, total: Double)]()
+        
+        for (month, total) in monthlyTotals {
+            sortedMonths.append((month: month, total: total))
+        }
+        
+        // Ordenar por fecha (más reciente primero)
+        sortedMonths.sort { (month1, month2) in
+            // Necesitamos convertir los strings de mes a fechas para ordenar
+            guard let date1 = dateFormatter.date(from: month1.month),
+                  let date2 = dateFormatter.date(from: month2.month) else {
+                return false
+            }
+            return date1 > date2
+        }
+        
+        return sortedMonths
+    }
+    
+    func getLastWeekdayOfWeek(in date: Date) -> Date {
+        let calendar = Calendar.current
+        
+        // Conseguir el inicio de la semana (lunes)
+        let weekComponents = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: date)
+        guard let startOfWeek = calendar.date(from: weekComponents) else { return date }
+        
+        // Buscar el viernes (día 5 de la semana)
+        var fridayComponents = DateComponents()
+        fridayComponents.weekday = 6 // 6 = viernes en calendario que comienza en domingo
+        
+        guard let friday = calendar.nextDate(after: startOfWeek, matching: fridayComponents, matchingPolicy: .nextTime) else {
+            return date
+        }
+        
+        // Verificar si es día laborable
+        let holidays = [Date]() // Aquí se pueden añadir días festivos conocidos
+        
+        if calendar.isDateInWeekend(friday) || holidays.contains(where: { calendar.isDate($0, inSameDayAs: friday) }) {
+            // Si el viernes es fin de semana o festivo, buscar el jueves
+            var thursdayComponents = DateComponents()
+            thursdayComponents.weekday = 5 // 5 = jueves
+            
+            if let thursday = calendar.nextDate(after: startOfWeek, matching: thursdayComponents, matchingPolicy: .nextTime) {
+                return thursday
+            }
+        }
+        
+        return friday
+    }
+    
+    func deleteWeeklyTips(date: Date) -> Bool {
+        print("FinanceViewModel: Eliminando propina para fecha \(date)")
+        
+        // Normalizar la fecha al inicio de la semana
+        let calendar = Calendar.current
+        let weekComponents = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: date)
+        guard let weekStartDate = calendar.date(from: weekComponents) else {
+            return false
+        }
+        
+        if let tipsTransaction = findTipsTransaction(),
+           var weeklyAmounts = tipsTransaction.weeklyAmounts {
+            
+            // Verificar si existe un registro para esta semana
+            guard weeklyAmounts[weekStartDate] != nil else {
+                return false
+            }
+            
+            // Eliminar el registro de esta semana
+            weeklyAmounts.removeValue(forKey: weekStartDate)
+            
+            // Crear una transacción actualizada
+            var updatedTransaction = tipsTransaction
+            updatedTransaction.weeklyAmounts = weeklyAmounts.isEmpty ? nil : weeklyAmounts
+            updatedTransaction.amount = weeklyAmounts.values.reduce(0, +)
+            
+            // Actualizar o eliminar la transacción
+            if weeklyAmounts.isEmpty {
+                tips.removeAll { $0.id == tipsTransaction.id }
+            } else {
+                if let index = tips.firstIndex(where: { $0.id == tipsTransaction.id }) {
+                    tips[index] = updatedTransaction
+                }
+            }
+            
+            // Guardar los cambios
+            StorageManager.shared.saveTips(tips)
+            
+            // Sincronizar con ingresos
+            syncTipsWithIncomes()
+            
+            return true
+        }
+        return false
+    }
+    
+    func clearPreviousTips() -> (success: Bool, message: String?) {
+        // Eliminar la transacción de propinas existente
+        if let tipsTransaction = findTipsTransaction() {
+            tips.removeAll { $0.id == tipsTransaction.id }
+        }
+        
+        // Crear una nueva transacción de propinas limpia
+        let newTipsTransaction = Transaction(
+            amount: 0,
+            concept: "Propinas",
+            isCompleted: false,
+            type: .tips,
+            periodicity: .monthly,
+            paymentType: .manual,
+            paymentMethod: .cash,
+            weekDay: .friday,
+            automaticPaymentOption: nil,
+            startDate: Date(),
+            weeklyAmounts: [:]
+        )
+        
+        tips.append(newTipsTransaction)
+        
+        // Forzar la notificación de cambio
+        DispatchQueue.main.async {
+            self.objectWillChange.send()
+    }
+        
+        return (true, "Todos los registros de propinas han sido eliminados")
+    }
+    
+    private func updateNextMonthDate() {
+        let calendar = Calendar.current
+        if showNextMonth {
+            nextMonthDate = calendar.date(byAdding: .month, value: 1, to: Date()) ?? Date()
+        } else {
+            nextMonthDate = Date()
+        }
+    }
+} 
