@@ -207,4 +207,104 @@ class StorageManager {
         print("StorageManager: No se encontró un orden guardado de métodos de pago")
         return []
     }
+    
+    // MARK: - Limpieza de archivos backup
+    
+    func cleanBackupFiles() -> (success: Bool, message: String, filesDeleted: Int) {
+        print("StorageManager: Iniciando limpieza de archivos backup")
+        
+        let fileManager = FileManager.default
+        var filesDeleted = 0
+        var errors: [String] = []
+        
+        // Obtener el directorio de documentos de la app
+        guard let documentsDirectory = fileManager.urls(for: .documentDirectory, 
+                                                       in: .userDomainMask).first else {
+            return (false, "No se pudo acceder al directorio de documentos", 0)
+        }
+        
+        // Obtener el directorio principal de la app (Bundle)
+        let bundleDirectory = Bundle.main.bundleURL
+        
+        // Patrones de archivos backup a buscar
+        let backupPatterns = [
+            "*.bak",
+            "*.backup",
+            "*.backup-*",
+            "*.v1.*.bak",
+            "*2.bak",
+            "*.orig",
+            "*.tmp"
+        ]
+        
+        // Directorios donde buscar archivos backup
+        let searchDirectories = [
+            documentsDirectory,
+            bundleDirectory
+        ]
+        
+        // Función para verificar si un archivo coincide con algún patrón
+        func matchesBackupPattern(_ filename: String) -> Bool {
+            return backupPatterns.contains { pattern in
+                let regexPattern = pattern
+                    .replacingOccurrences(of: ".", with: "\\.")
+                    .replacingOccurrences(of: "*", with: ".*")
+                
+                return filename.range(of: "^\(regexPattern)$", options: .regularExpression) != nil
+            }
+        }
+        
+        // Buscar y eliminar archivos backup en cada directorio
+        for directory in searchDirectories {
+            do {
+                // Buscar archivos de forma recursiva
+                let directoryContents = try fileManager.contentsOfDirectory(
+                    at: directory,
+                    includingPropertiesForKeys: [.isRegularFileKey],
+                    options: [.skipsHiddenFiles]
+                )
+                
+                for fileURL in directoryContents {
+                    let filename = fileURL.lastPathComponent
+                    
+                    // Verificar si el archivo coincide con algún patrón de backup
+                    if matchesBackupPattern(filename) {
+                        // Verificar que es un archivo regular (no directorio)
+                        let resourceValues = try fileURL.resourceValues(forKeys: [.isRegularFileKey])
+                        if resourceValues.isRegularFile == true {
+                            do {
+                                try fileManager.removeItem(at: fileURL)
+                                filesDeleted += 1
+                                print("StorageManager: Archivo eliminado: \(filename)")
+                            } catch {
+                                let errorMsg = "Error al eliminar \(filename): \(error.localizedDescription)"
+                                errors.append(errorMsg)
+                                print("StorageManager: \(errorMsg)")
+                            }
+                        }
+                    }
+                }
+            } catch {
+                let errorMsg = "Error al acceder al directorio \(directory.path): \(error.localizedDescription)"
+                errors.append(errorMsg)
+                print("StorageManager: \(errorMsg)")
+            }
+        }
+        
+        // Generar mensaje de resultado
+        var message: String
+        if filesDeleted > 0 {
+            message = "Se eliminaron \(filesDeleted) archivo(s) backup correctamente"
+            if !errors.isEmpty {
+                message += "\n\nAlgunas operaciones fallaron:\n" + errors.joined(separator: "\n")
+            }
+        } else if errors.isEmpty {
+            message = "No se encontraron archivos backup para eliminar"
+        } else {
+            message = "No se pudieron eliminar archivos backup:\n" + errors.joined(separator: "\n")
+        }
+        
+        print("StorageManager: Limpieza completada. Archivos eliminados: \(filesDeleted)")
+        return (filesDeleted > 0 || errors.isEmpty, message, filesDeleted)
+    }
 } 

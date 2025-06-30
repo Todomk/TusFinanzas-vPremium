@@ -10,6 +10,8 @@ struct ConfiguracionView: View {
     @State private var showingCategoriesModal = false
     @State private var showingResetConfirmation = false
     @State private var showingPasswordModal = false
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
     @State private var expenseNotificationsEnabled = false
     @State private var notificationHour = 9
     @State private var notificationMinute = 0
@@ -144,6 +146,26 @@ struct ConfiguracionView: View {
                 }
             }
             
+            Section(header: Text("Mantenimiento")) {
+                // Botón para limpiar archivos backup
+                Button {
+                    let result = viewModel.cleanBackupFiles()
+                    if result.success {
+                        alertMessage = result.message ?? "Archivos backup eliminados correctamente"
+                    } else {
+                        alertMessage = result.message ?? "Error al eliminar archivos backup"
+                    }
+                    showingAlert = true
+                } label: {
+                    HStack {
+                        Text("Limpiar archivos backup")
+                        Spacer()
+                        Image(systemName: "trash.circle")
+                            .foregroundColor(.orange)
+                    }
+                }
+            }
+            
             Section(header: Text("Información")) {
                 // Botón para mostrar créditos
                 Button {
@@ -200,6 +222,11 @@ struct ConfiguracionView: View {
                     print("Reset completado con éxito")
                 }
             }
+        }
+        .alert("Resultado", isPresented: $showingAlert) {
+            Button("Aceptar", role: .cancel) { }
+        } message: {
+            Text(alertMessage)
         }
     }
     

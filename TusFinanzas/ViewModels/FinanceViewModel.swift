@@ -2116,4 +2116,16 @@ class FinanceViewModel: ObservableObject {
             print("No hay gastos pendientes futuros.")
         }
     }
+    
+    // MARK: - Limpieza de archivos backup
+    
+    func cleanBackupFiles() -> (success: Bool, message: String?) {
+        print("FinanceViewModel: Iniciando limpieza de archivos backup")
+        
+        let result = StorageManager.shared.cleanBackupFiles()
+        
+        print("FinanceViewModel: Resultado de limpieza - Éxito: \(result.success), Archivos eliminados: \(result.filesDeleted)")
+        
+        return (result.success, result.message)
+    }
 } 

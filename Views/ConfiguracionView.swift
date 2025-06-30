@@ -9,6 +9,8 @@ struct ConfiguracionView: View {
     @State private var showingPaymentMethodsModal = false
     @State private var showingCategoriesModal = false
     @State private var showingResetConfirmation = false
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
     
     private let languages = ["Español", "English"]
     
@@ -60,6 +62,26 @@ struct ConfiguracionView: View {
                         Spacer()
                         Image(systemName: "folder.fill")
                             .foregroundColor(.blue)
+                    }
+                }
+            }
+            
+            Section(header: Text("Mantenimiento")) {
+                // Botón para limpiar archivos backup
+                Button {
+                    let result = viewModel.cleanBackupFiles()
+                    if result.success {
+                        alertMessage = result.message ?? "Archivos backup eliminados correctamente"
+                    } else {
+                        alertMessage = result.message ?? "Error al eliminar archivos backup"
+                    }
+                    showingAlert = true
+                } label: {
+                    HStack {
+                        Text("Limpiar archivos backup")
+                        Spacer()
+                        Image(systemName: "trash.circle")
+                            .foregroundColor(.orange)
                     }
                 }
             }
@@ -119,6 +141,11 @@ struct ConfiguracionView: View {
             }
         } message: {
             Text("Restablecer valores para comenzar un nuevo ciclo (se desmarcaran todos los ingresos, gastos y gastos de otras cuentas completados)")
+        }
+        .alert("Resultado", isPresented: $showingAlert) {
+            Button("Aceptar", role: .cancel) { }
+        } message: {
+            Text(alertMessage)
         }
     }
     
