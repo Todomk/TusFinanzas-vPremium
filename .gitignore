@@ -1,0 +1,52 @@
+# Xcode
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/*.xcscheme
+!*.xcodeproj/xcshareddata/
+xcuserdata/
+DerivedData/
+.swiftpm/configuration/registries.json
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archivos de backup (IMPORTANTE: Prevenir archivos backup)
+*.bak
+*.backup
+*.backup-*
+*.v1.*.bak
+*2.bak
+*.orig
+*.tmp
+*~
+
+# Logs de compilación
+build_output.txt
+build_log*.txt
+
+# Archivos temporales
+temp_line.txt
+.xcodebuild.env
+
+# Archivos de entorno
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+
+# Swift Package Manager
+.build/
+Packages/
+Package.resolved
+*.xcworkspace/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
